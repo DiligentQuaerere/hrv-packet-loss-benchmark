@@ -1,0 +1,19 @@
+v2 grid: 72 records found in src\..\data\eegmat
+truth done: 72 records, 5 QC-excluded (Subject02_1, Subject13_1, Subject20_2, Subject28_1, Subject35_2) [1s]
+[10/72] Subject04_2 [8s]
+[20/72] Subject09_2 [15s]
+[30/72] Subject14_2 [22s]
+[40/72] Subject19_2 [29s]
+[50/72] Subject24_2 [36s]
+[60/72] Subject29_2 [43s]
+[70/72] Subject34_2 [50s]
+[72/72] Subject35_2 [51s]
+results_long_all: 135864 rows (72 records)
+results_long_excluded: 126252 rows (67 records)
+
+== v1 parity check ==
+row count identical: 126252
+columns compared: 15; columns with differences: none
+truth_metrics.csv identical on 18 shared columns: True
+
+total 53s

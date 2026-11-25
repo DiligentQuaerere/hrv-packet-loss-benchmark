@@ -1,0 +1,961 @@
+== split 'excluded': 126252 rows, 67 records ==
+  stratum pooled: 67 records, 126252 rows, 180 cells -> summary_excluded_pooled.csv
+  stratum seg1  : 33 records, 67500 rows, 180 cells -> summary_excluded_seg1.csv
+  stratum seg2  : 34 records, 58752 rows, 180 cells -> summary_excluded_seg2.csv
+
+== split 'all': 135864 rows, 72 records ==
+  stratum pooled: 72 records, 135864 rows, 180 cells -> summary_all_pooled.csv
+  stratum seg1  : 36 records, 73656 rows, 180 cells -> summary_all_seg1.csv
+  stratum seg2  : 36 records, 62208 rows, 180 cells -> summary_all_seg2.csv
+
+== revision A: is LF error still driven by interpolation after stratification? ==
+  wrote lf_attribution_excluded.csv, method_spread_excluded.csv
+  wrote lf_attribution_all.csv, method_spread_all.csv
+
+== revision B: does excluding dirty records make the safe range look too good? ==
+  pooled: 36 comparable cells; threshold shrinks when dirty records are kept in 1, unchanged in 33, grows in 2
+  seg1  : 36 comparable cells; threshold shrinks when dirty records are kept in 0, unchanged in 35, grows in 1
+  seg2  : 36 comparable cells; threshold shrinks when dirty records are kept in 1, unchanged in 35, grows in 0
+  wrote thresholds_compare_excluded_vs_all.csv, fig_threshold_compare.png
+
+---- median |rel err| (%) and n : split=excluded stratum=pooled ----
+LF: median |rel err| %
+loss_target    0.05     0.10     0.20     0.30     0.50
+method                                                 
+none         8173.1  11587.7  20539.5  29439.9  36434.7
+mean_global    19.0     23.8     44.9     76.0    123.1
+mean_local     19.4     29.9     73.1    124.3   1413.0
+random_sd      19.2     25.2     50.6     78.1    168.9
+LF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          498   699   702   804   804
+mean_global   498   699   702   804   804
+mean_local    498   699   702   804   804
+random_sd     498   699   702   804   804
+HF: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30    0.50
+method                                             
+none         1839.7  2276.0  4194.1  6251.5  9217.9
+mean_global     9.9    16.2    25.4    47.0    72.3
+mean_local      9.5    17.1    28.1    59.5   162.4
+random_sd       9.8    13.8    22.0    42.2    74.6
+HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          498   699   702   804   804
+mean_global   498   699   702   804   804
+mean_local    498   699   702   804   804
+random_sd     498   699   702   804   804
+LF_HF: median |rel err| %
+loss_target   0.05   0.10   0.20   0.30   0.50
+method                                        
+none         364.9  447.9  408.4  484.2  373.7
+mean_global   19.2   24.2   46.0   69.1  134.7
+mean_local    19.9   29.4   62.7  130.0  298.3
+random_sd     20.4   26.2   41.6   52.2   59.8
+LF_HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          498   699   702   804   804
+mean_global   498   699   702   804   804
+mean_local    498   699   702   804   804
+random_sd     498   699   702   804   804
+TP: median |rel err| %
+loss_target    0.05    0.10     0.20     0.30     0.50
+method                                                
+none         4430.6  6386.7  11510.1  17704.2  23797.3
+mean_global    12.6    18.7     30.4     57.3     85.8
+mean_local     12.4    21.2     36.5     80.1    601.6
+random_sd      11.5    16.9     30.1     52.3    107.7
+TP: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          498   699   702   804   804
+mean_global   498   699   702   804   804
+mean_local    498   699   702   804   804
+random_sd     498   699   702   804   804
+RMSSD: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30    0.50
+method                                             
+none         1306.1  2180.4  3074.1  4863.3  7266.0
+mean_global     4.5     7.4    10.4    21.5    33.7
+mean_local      4.4     7.7    11.4    26.8   147.7
+random_sd       6.1     6.8    12.0    20.0    41.3
+RMSSD: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          498   699   702   804   804
+mean_global   498   699   702   804   804
+mean_local    498   699   702   804   804
+random_sd     498   699   702   804   804
+SDNN: median |rel err| %
+loss_target   0.05    0.10    0.20    0.30    0.50
+method                                            
+none         802.5  1346.1  1946.8  2942.9  4477.7
+mean_global    4.6     7.4    10.8    21.8    37.6
+mean_local     5.9     8.2    17.6    32.0   294.0
+random_sd      4.7     6.2    10.9    19.1    32.2
+SDNN: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          498   699   702   804   804
+mean_global   498   699   702   804   804
+mean_local    498   699   702   804   804
+random_sd     498   699   702   804   804
+LF mean_global: median |rel err| % by block_s
+loss_target   0.05   0.10   0.20    0.30    0.50
+block_s                                         
+2            151.0  233.6  832.0  2095.9  8472.2
+5             15.3   18.3   59.2   173.2   445.5
+10             5.5   13.3   21.4    32.1    57.9
+30             NaN   15.7   16.3    49.2    61.2
+LF mean_local: median |rel err| % by block_s
+loss_target   0.05   0.10    0.20    0.30     0.50
+block_s                                           
+2            162.4  425.2  2153.9  6485.9  23754.9
+5             12.7   30.5    90.3   573.9   4754.5
+10             6.4   14.9    25.4    37.5    164.2
+30             NaN   18.1    16.3    49.2     62.7
+LF random_sd: median |rel err| % by block_s
+loss_target   0.05   0.10   0.20    0.30    0.50
+block_s                                         
+2            151.4  238.7  732.4  1452.5  4324.0
+5             18.2   22.7   64.6   195.3   391.3
+10             4.3   16.0   22.7    31.9    57.6
+30             NaN   12.0   12.1    32.2    45.8
+HF mean_global: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            62.5  135.3  284.0  619.0  1555.8
+5             6.4    9.7   17.4   30.1    57.4
+10            5.2   10.4   19.0   28.9    52.0
+30            NaN   19.7   20.9   49.0    65.4
+HF mean_local: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20    0.30    0.50
+block_s                                        
+2            59.7  155.3  489.5  1105.5  4559.2
+5             6.3    9.9   19.3    45.8   494.1
+10            5.2   11.8   20.2    32.9    61.3
+30            NaN   19.6   21.9    48.7    68.0
+HF random_sd: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            65.1  148.5  404.3  906.5  4145.2
+5             6.4    9.3   16.3   34.6   103.7
+10            4.0    7.7   12.9   23.4    44.7
+30            NaN   11.8   13.6   33.6    42.8
+thresholds by block (excluded/pooled) — first rate crossing 10%:
+  none:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.05  0.05   0.05
+10       0.05  0.05   0.05
+30       0.10  0.10   0.10
+  mean_global:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.20  0.05   0.05
+10       0.10  0.10   0.10
+30       0.10  0.10   0.10
+  mean_local:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.20  0.05   0.05
+10       0.10  0.10   0.10
+30       0.10  0.10   0.10
+  random_sd:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.20  0.05   0.05
+10       0.20  0.10   0.10
+30       0.10  0.10   0.10
+
+---- median |rel err| (%) and n : split=excluded stratum=seg1 ----
+LF: median |rel err| %
+loss_target    0.05    0.10     0.20     0.30     0.50
+method                                                
+none         5353.2  7571.6  12737.4  17014.6  22005.6
+mean_global    15.1    23.8     36.0     56.8    118.9
+mean_local     17.8    30.5     60.4    140.3   2921.0
+random_sd      15.8    22.7     36.9     55.9    122.0
+LF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          294   393   396   396   396
+mean_global   294   393   396   396   396
+mean_local    294   393   396   396   396
+random_sd     294   393   396   396   396
+HF: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30    0.50
+method                                             
+none         1088.9  1302.3  2529.9  3707.4  6057.2
+mean_global     7.7    15.5    24.2    38.5    65.9
+mean_local      7.7    17.5    26.2    47.6   324.3
+random_sd       7.4    13.5    19.4    35.3   105.4
+HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          294   393   396   396   396
+mean_global   294   393   396   396   396
+mean_local    294   393   396   396   396
+random_sd     294   393   396   396   396
+LF_HF: median |rel err| %
+loss_target   0.05   0.10   0.20   0.30   0.50
+method                                        
+none         317.5  435.7  386.6  388.0  322.5
+mean_global   14.3   20.6   34.3   50.8   95.9
+mean_local    16.8   29.1   58.6   86.4  250.9
+random_sd     16.3   22.7   34.3   41.6   51.5
+LF_HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          294   393   396   396   396
+mean_global   294   393   396   396   396
+mean_local    294   393   396   396   396
+random_sd     294   393   396   396   396
+TP: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30     0.50
+method                                              
+none         3042.1  3588.8  6508.1  8582.8  11834.3
+mean_global     8.9    19.0    25.8    41.8     72.4
+mean_local      9.4    20.9    31.8    61.8   1326.9
+random_sd       8.3    17.0    22.6    36.0    106.4
+TP: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          294   393   396   396   396
+mean_global   294   393   396   396   396
+mean_local    294   393   396   396   396
+random_sd     294   393   396   396   396
+RMSSD: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30    0.50
+method                                             
+none         1196.0  2391.3  3175.0  4388.1  6556.6
+mean_global     3.7     7.2    10.8    18.9    38.2
+mean_local      3.8     7.8    11.7    24.7   410.7
+random_sd       4.5     5.5    12.0    16.9    62.8
+RMSSD: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          294   393   396   396   396
+mean_global   294   393   396   396   396
+mean_local    294   393   396   396   396
+random_sd     294   393   396   396   396
+SDNN: median |rel err| %
+loss_target   0.05    0.10    0.20    0.30    0.50
+method                                            
+none         760.8  1468.5  2037.3  2776.4  4301.5
+mean_global    3.6     7.8    10.4    19.6    42.6
+mean_local     5.5     8.7    18.3    37.8   536.9
+random_sd      4.2     6.2    10.2    16.0    42.8
+SDNN: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          294   393   396   396   396
+mean_global   294   393   396   396   396
+mean_local    294   393   396   396   396
+random_sd     294   393   396   396   396
+LF mean_global: median |rel err| % by block_s
+loss_target   0.05   0.10   0.20    0.30    0.50
+block_s                                         
+2            178.0  247.1  858.2  2154.7  7800.4
+5             16.3   40.3   60.1   132.6   443.7
+10             5.5    8.2   19.1    20.5    48.1
+30             NaN   15.7   16.3    32.7    55.9
+LF mean_local: median |rel err| % by block_s
+loss_target   0.05   0.10    0.20    0.30     0.50
+block_s                                           
+2            249.7  554.5  2490.8  6265.1  15400.8
+5             12.3   68.2   113.3  1542.5   6148.7
+10             6.4   11.7    27.7    27.3    296.0
+30             NaN   18.1    16.3    33.7     61.0
+LF random_sd: median |rel err| % by block_s
+loss_target   0.05   0.10   0.20    0.30    0.50
+block_s                                         
+2            170.4  245.1  732.4  1204.5  3368.0
+5             17.7   38.3   64.6   151.6   332.3
+10             4.3    9.8   19.3    26.2    48.0
+30             NaN   12.0   12.1    24.3    39.1
+HF mean_global: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            57.7  122.7  274.4  551.7  1433.4
+5             5.2   10.8   18.5   33.0    65.3
+10            5.2   10.4   19.3   25.0    52.9
+30            NaN   19.7   20.9   35.7    58.2
+HF mean_local: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20    0.30    0.50
+block_s                                        
+2            80.8  171.2  486.7  1184.7  3024.6
+5             5.0   11.1   20.8   101.7   743.3
+10            5.2   10.1   21.4    28.7    61.8
+30            NaN   19.6   21.9    35.3    60.6
+HF random_sd: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20    0.30    0.50
+block_s                                        
+2            62.2  145.7  436.4  1253.5  3912.3
+5             4.5   11.2   16.5    34.0   324.1
+10            4.0    7.3   13.8    21.9    44.9
+30            NaN   11.8   13.6    24.8    39.3
+thresholds by block (excluded/seg1) — first rate crossing 10%:
+  none:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.05  0.05   0.05
+10       0.05  0.05   0.05
+30       0.10  0.10   0.10
+  mean_global:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.10  0.05   0.05
+10       0.10  0.20   0.10
+30       0.10  0.10   0.10
+  mean_local:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.10  0.05   0.05
+10       0.10  0.10   0.10
+30       0.10  0.10   0.10
+  random_sd:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.10  0.05   0.05
+10       0.20  0.20   0.10
+30       0.10  0.10   0.10
+
+---- median |rel err| (%) and n : split=excluded stratum=seg2 ----
+LF: median |rel err| %
+loss_target     0.05     0.10     0.20     0.30     0.50
+method                                                  
+none         26457.0  25760.3  51345.4  66059.8  72385.7
+mean_global     32.6     24.1     77.5     89.2    129.3
+mean_local      21.9     28.3     92.4    117.7    355.1
+random_sd       36.0     28.6    100.1    105.2    203.4
+LF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          204   306   306   408   408
+mean_global   204   306   306   408   408
+mean_local    204   306   306   408   408
+random_sd     204   306   306   408   408
+HF: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30     0.50
+method                                              
+none         4866.6  4827.9  7986.7  9815.1  13685.8
+mean_global    16.7    16.9    28.7    62.2     78.1
+mean_local     13.4    16.4    32.6    72.7     91.0
+random_sd      14.5    14.7    26.2    48.9     70.5
+HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          204   306   306   408   408
+mean_global   204   306   306   408   408
+mean_local    204   306   306   408   408
+random_sd     204   306   306   408   408
+LF_HF: median |rel err| %
+loss_target   0.05   0.10   0.20   0.30   0.50
+method                                        
+none         394.1  454.2  447.6  581.6  422.2
+mean_global   32.2   30.7   64.2   89.3  174.7
+mean_local    26.5   29.7   67.5  169.8  327.5
+random_sd     29.2   31.4   53.2   62.2   67.5
+LF_HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          204   306   306   408   408
+mean_global   204   306   306   408   408
+mean_local    204   306   306   408   408
+random_sd     204   306   306   408   408
+TP: median |rel err| %
+loss_target     0.05     0.10     0.20     0.30     0.50
+method                                                  
+none         14278.2  13970.0  26217.7  32224.6  39615.9
+mean_global     25.6     18.3     41.6     78.8     88.7
+mean_local      19.3     21.3     42.8     85.5    123.6
+random_sd       23.7     16.6     56.9     67.7    116.2
+TP: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          204   306   306   408   408
+mean_global   204   306   306   408   408
+mean_local    204   306   306   408   408
+random_sd     204   306   306   408   408
+RMSSD: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30    0.50
+method                                             
+none         1371.7  2028.2  3005.6  5617.6  7810.8
+mean_global     5.9     7.8     9.8    23.9    31.7
+mean_local      5.2     7.7    10.5    27.8    38.4
+random_sd       7.6     7.8    11.9    23.8    36.1
+RMSSD: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          204   306   306   408   408
+mean_global   204   306   306   408   408
+mean_local    204   306   306   408   408
+random_sd     204   306   306   408   408
+SDNN: median |rel err| %
+loss_target   0.05    0.10    0.20    0.30    0.50
+method                                            
+none         852.5  1241.7  1801.2  3228.3  4729.6
+mean_global    5.6     6.3    12.0    25.6    33.4
+mean_local     6.8     7.8    16.4    30.5    51.2
+random_sd      5.8     6.7    12.7    21.3    30.1
+SDNN: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          204   306   306   408   408
+mean_global   204   306   306   408   408
+mean_local    204   306   306   408   408
+random_sd     204   306   306   408   408
+LF mean_global: median |rel err| % by block_s
+loss_target   0.05   0.10   0.20    0.30    0.50
+block_s                                         
+2            124.4  201.1  814.8  1952.7  9323.1
+5             15.2   13.6   50.1   256.0   456.1
+10             NaN   21.8   27.4    47.4    68.7
+30             NaN    NaN    NaN    66.6    65.3
+LF mean_local: median |rel err| % by block_s
+loss_target  0.05   0.10    0.20    0.30     0.50
+block_s                                          
+2            71.6  221.9  1835.8  7466.7  39926.2
+5            13.1   13.0    47.0   436.9   1438.3
+10            NaN   22.4    23.1    48.5    135.6
+30            NaN    NaN     NaN    69.1     65.8
+LF random_sd: median |rel err| % by block_s
+loss_target   0.05   0.10   0.20    0.30    0.50
+block_s                                         
+2            123.4  196.9  782.8  1695.5  5466.0
+5             18.4   18.0   57.7   260.3   521.3
+10             NaN   23.8   28.9    42.1    74.3
+30             NaN    NaN    NaN    50.5    55.3
+HF mean_global: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            71.5  138.6  328.8  665.1  1642.8
+5             9.2    7.1   16.7   26.7    45.4
+10            NaN   10.7   16.6   34.6    51.6
+30            NaN    NaN    NaN   75.8    80.9
+HF mean_local: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20    0.30    0.50
+block_s                                        
+2            41.9  109.8  490.1  1088.7  5986.1
+5             9.2    9.3   15.5    35.0   102.3
+10            NaN   12.7   15.3    36.3    61.1
+30            NaN    NaN    NaN    76.9    81.7
+HF random_sd: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            78.6  150.9  395.2  770.7  4775.1
+5             7.0    7.7   15.6   34.8    54.4
+10            NaN    9.0   11.3   24.1    43.2
+30            NaN    NaN    NaN   48.9    45.2
+thresholds by block (excluded/seg2) — first rate crossing 10%:
+  none:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.05  0.05   0.05
+10       0.10  0.10   0.10
+30       0.30  0.30   0.30
+  mean_global:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.20  0.05   0.05
+10       0.10  0.10   0.10
+30       0.30  0.30   0.30
+  mean_local:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.20  0.05   0.05
+10       0.10  0.10   0.10
+30       0.30  0.30   0.30
+  random_sd:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.20  0.05   0.05
+10       0.20  0.10   0.10
+30       0.30  0.30   0.30
+
+---- median |rel err| (%) and n : split=all stratum=pooled ----
+LF: median |rel err| %
+loss_target    0.05    0.10     0.20     0.30     0.50
+method                                                
+none         6749.9  9833.1  18505.6  26192.3  32194.1
+mean_global    17.5    25.0     44.7     73.3     96.7
+mean_local     19.1    29.8     61.2    104.9    910.7
+random_sd      18.5    26.5     48.6     75.1    116.3
+LF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          537   753   756   864   864
+mean_global   537   753   756   864   864
+mean_local    537   753   756   864   864
+random_sd     537   753   756   864   864
+HF: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30    0.50
+method                                             
+none         1570.3  1862.4  3562.7  5643.6  8216.8
+mean_global    10.2    17.1    26.8    49.0    74.7
+mean_local      9.7    17.8    29.1    59.5    95.1
+random_sd       9.8    14.6    23.3    45.6    74.9
+HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          537   753   756   864   864
+mean_global   537   753   756   864   864
+mean_local    537   753   756   864   864
+random_sd     537   753   756   864   864
+LF_HF: median |rel err| %
+loss_target   0.05   0.10   0.20   0.30   0.50
+method                                        
+none         338.6  443.1  411.3  504.4  402.9
+mean_global   18.3   24.2   43.2   67.0  129.2
+mean_local    20.2   29.4   61.8  131.1  295.8
+random_sd     18.8   26.2   40.9   52.0   59.9
+LF_HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          537   753   756   864   864
+mean_global   537   753   756   864   864
+mean_local    537   753   756   864   864
+random_sd     537   753   756   864   864
+TP: median |rel err| %
+loss_target    0.05    0.10    0.20     0.30     0.50
+method                                               
+none         3864.0  5036.5  9612.0  15408.2  20930.9
+mean_global    12.7    20.0    32.0     58.8     82.5
+mean_local     12.9    21.6    37.0     76.8    320.6
+random_sd      11.7    17.6    32.3     54.2     85.7
+TP: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          537   753   756   864   864
+mean_global   537   753   756   864   864
+mean_local    537   753   756   864   864
+random_sd     537   753   756   864   864
+RMSSD: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30    0.50
+method                                             
+none         1207.9  2028.1  2938.6  4530.5  6825.7
+mean_global     4.6     7.7    10.8    22.4    35.6
+mean_local      4.6     8.2    11.7    27.9    68.0
+random_sd       6.2     7.2    12.1    22.1    38.7
+RMSSD: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          537   753   756   864   864
+mean_global   537   753   756   864   864
+mean_local    537   753   756   864   864
+random_sd     537   753   756   864   864
+SDNN: median |rel err| %
+loss_target   0.05    0.10    0.20    0.30    0.50
+method                                            
+none         750.9  1261.3  1827.3  2777.0  4261.8
+mean_global    4.9     7.8    11.4    24.0    38.4
+mean_local     6.2     9.0    16.6    30.7   175.7
+random_sd      5.0     6.9    11.2    21.0    33.5
+SDNN: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          537   753   756   864   864
+mean_global   537   753   756   864   864
+mean_local    537   753   756   864   864
+random_sd     537   753   756   864   864
+LF mean_global: median |rel err| % by block_s
+loss_target   0.05   0.10   0.20    0.30    0.50
+block_s                                         
+2            127.9  205.1  689.4  1741.2  7678.0
+5             15.2   19.1   55.1   143.5   381.5
+10             5.1   13.7   21.6    32.7    58.5
+30             NaN   17.7   16.6    50.7    61.7
+LF mean_local: median |rel err| % by block_s
+loss_target   0.05   0.10    0.20    0.30     0.50
+block_s                                           
+2            131.3  340.6  1899.3  5761.5  21570.2
+5             13.6   28.3    84.8   492.5   3782.4
+10             6.4   15.6    26.3    40.0    146.0
+30             NaN   19.5    16.4    49.5     62.8
+LF random_sd: median |rel err| % by block_s
+loss_target   0.05   0.10   0.20    0.30    0.50
+block_s                                         
+2            123.4  200.4  621.8  1247.1  3774.0
+5             17.9   24.3   61.6   162.6   350.7
+10             4.3   16.6   24.4    33.1    59.5
+30             NaN   13.6   12.5    33.4    46.5
+HF mean_global: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            57.4  109.7  266.5  532.9  1488.3
+5             7.0    9.9   19.0   31.9    60.4
+10            5.1   11.2   19.7   31.9    54.2
+30            NaN   20.0   21.2   50.9    66.2
+HF mean_local: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            53.6  121.3  453.5  986.5  3665.5
+5             6.9   10.9   20.3   44.1   364.4
+10            5.1   11.8   21.0   33.6    62.0
+30            NaN   19.8   22.1   49.8    68.5
+HF random_sd: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            62.1  115.6  338.0  801.8  3664.1
+5             6.5   10.1   16.6   35.7    88.2
+10            4.0    8.3   13.7   23.8    47.0
+30            NaN   11.9   13.8   36.1    43.9
+thresholds by block (all/pooled) — first rate crossing 10%:
+  none:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.05  0.05   0.05
+10       0.05  0.05   0.05
+30       0.10  0.10   0.10
+  mean_global:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.20  0.05   0.05
+10       0.10  0.10   0.10
+30       0.10  0.10   0.10
+  mean_local:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.10  0.05   0.05
+10       0.10  0.10   0.10
+30       0.10  0.10   0.10
+  random_sd:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.10  0.05   0.05
+10       0.20  0.10   0.10
+30       0.10  0.10   0.10
+
+---- median |rel err| (%) and n : split=all stratum=seg1 ----
+LF: median |rel err| %
+loss_target    0.05    0.10     0.20     0.30     0.50
+method                                                
+none         4773.9  6563.8  11167.9  15397.0  19525.5
+mean_global    14.7    23.9     36.0     56.3     84.2
+mean_local     18.4    29.9     51.3    121.2   2040.3
+random_sd      16.2    23.6     37.2     55.3     90.7
+LF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          321   429   432   432   432
+mean_global   321   429   432   432   432
+mean_local    321   429   432   432   432
+random_sd     321   429   432   432   432
+HF: median |rel err| %
+loss_target   0.05    0.10    0.20    0.30    0.50
+method                                            
+none         859.1  1136.6  2179.1  2923.9  5200.4
+mean_global    7.8    16.7    24.9    40.1    69.3
+mean_local     7.8    17.9    27.5    48.5   181.1
+random_sd      7.6    13.9    20.6    37.2    74.9
+HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          321   429   432   432   432
+mean_global   321   429   432   432   432
+mean_local    321   429   432   432   432
+random_sd     321   429   432   432   432
+LF_HF: median |rel err| %
+loss_target   0.05   0.10   0.20   0.30   0.50
+method                                        
+none         313.2  434.1  392.5  411.9  360.1
+mean_global   13.7   20.8   33.9   50.6   89.9
+mean_local    17.5   28.6   58.5   92.0  259.4
+random_sd     15.1   22.7   34.4   43.2   52.9
+LF_HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          321   429   432   432   432
+mean_global   321   429   432   432   432
+mean_local    321   429   432   432   432
+random_sd     321   429   432   432   432
+TP: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30     0.50
+method                                              
+none         2619.7  3191.3  5634.7  8000.3  10733.7
+mean_global     8.9    20.1    27.2    44.6     73.0
+mean_local      9.4    21.6    31.8    57.5    865.9
+random_sd       8.4    17.6    24.2    40.2     77.9
+TP: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          321   429   432   432   432
+mean_global   321   429   432   432   432
+mean_local    321   429   432   432   432
+random_sd     321   429   432   432   432
+RMSSD: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30    0.50
+method                                             
+none         1111.7  2115.7  2960.9  3934.3  6065.1
+mean_global     3.8     7.5    11.2    19.6    39.5
+mean_local      4.1     8.4    12.1    27.0   321.2
+random_sd       5.0     6.2    12.0    19.5    45.0
+RMSSD: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          321   429   432   432   432
+mean_global   321   429   432   432   432
+mean_local    321   429   432   432   432
+random_sd     321   429   432   432   432
+SDNN: median |rel err| %
+loss_target   0.05    0.10    0.20    0.30    0.50
+method                                            
+none         697.8  1347.6  1946.4  2522.0  3800.4
+mean_global    4.4     8.0    10.8    20.4    42.9
+mean_local     5.8     9.1    16.7    31.1   469.8
+random_sd      4.3     6.6    10.6    19.0    39.6
+SDNN: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          321   429   432   432   432
+mean_global   321   429   432   432   432
+mean_local    321   429   432   432   432
+random_sd     321   429   432   432   432
+LF mean_global: median |rel err| % by block_s
+loss_target   0.05   0.10   0.20    0.30    0.50
+block_s                                         
+2            136.3  225.6  721.4  1918.7  6581.1
+5             18.3   37.9   58.3   118.4   367.5
+10             5.1    8.9   19.8    21.6    54.0
+30             NaN   17.7   16.6    32.9    56.7
+LF mean_local: median |rel err| % by block_s
+loss_target   0.05   0.10    0.20    0.30     0.50
+block_s                                           
+2            171.4  414.6  2246.8  5558.3  13442.2
+5             18.1   57.6   104.4   903.9   5574.0
+10             6.4   12.9    31.1    29.0    273.0
+30             NaN   19.5    16.4    34.5     61.2
+LF random_sd: median |rel err| % by block_s
+loss_target   0.05   0.10   0.20    0.30    0.50
+block_s                                         
+2            138.0  228.9  579.7  1085.5  3217.1
+5             18.6   37.7   63.1   121.6   284.3
+10             4.3   10.0   22.8    28.1    48.9
+30             NaN   13.6   12.5    25.5    39.2
+HF mean_global: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            48.3  110.0  248.4  501.2  1227.1
+5             5.3   11.0   20.0   34.2    76.2
+10            5.1   10.9   20.1   26.9    53.9
+30            NaN   20.0   21.2   36.9    59.1
+HF mean_local: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20    0.30    0.50
+block_s                                        
+2            61.9  157.1  451.4  1010.7  2609.2
+5             5.2   11.5   21.9    82.6   573.3
+10            5.1   10.3   22.2    30.6    62.9
+30            NaN   19.8   22.1    37.4    61.0
+HF random_sd: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20    0.30    0.50
+block_s                                        
+2            52.8  110.1  340.3  1098.2  3575.5
+5             4.9   11.5   16.5    42.2   170.1
+10            4.0    7.5   14.9    23.2    46.9
+30            NaN   11.9   13.8    25.4    42.0
+thresholds by block (all/seg1) — first rate crossing 10%:
+  none:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.05  0.05   0.05
+10       0.05  0.05   0.05
+30       0.10  0.10   0.10
+  mean_global:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.10  0.05   0.05
+10       0.10  0.20   0.10
+30       0.10  0.10   0.10
+  mean_local:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.10  0.05   0.05
+10       0.10  0.10   0.10
+30       0.10  0.10   0.10
+  random_sd:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.10  0.05   0.05
+10       0.20  0.20   0.10
+30       0.10  0.10   0.10
+
+---- median |rel err| (%) and n : split=all stratum=seg2 ----
+LF: median |rel err| %
+loss_target     0.05     0.10     0.20     0.30     0.50
+method                                                  
+none         21074.5  24733.0  45359.5  60247.3  62638.7
+mean_global     21.3     25.6     67.0     87.2     99.6
+mean_local      20.8     29.6     81.1     96.1    279.6
+random_sd       24.4     30.9     85.2     93.3    143.3
+LF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          216   324   324   432   432
+mean_global   216   324   324   432   432
+mean_local    216   324   324   432   432
+random_sd     216   324   324   432   432
+HF: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30     0.50
+method                                              
+none         4285.2  4537.7  7292.6  9136.0  12630.9
+mean_global    17.0    17.9    30.9    64.5     81.7
+mean_local     13.6    17.4    33.3    74.4     89.8
+random_sd      15.2    16.4    28.2    50.7     75.2
+HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          216   324   324   432   432
+mean_global   216   324   324   432   432
+mean_local    216   324   324   432   432
+random_sd     216   324   324   432   432
+LF_HF: median |rel err| %
+loss_target   0.05   0.10   0.20   0.30   0.50
+method                                        
+none         383.0  450.6  445.0  592.3  430.0
+mean_global   32.2   32.2   61.1   87.4  168.8
+mean_local    28.1   30.3   67.0  167.9  323.7
+random_sd     30.0   31.9   53.2   61.4   67.8
+LF_HF: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          216   324   324   432   432
+mean_global   216   324   324   432   432
+mean_local    216   324   324   432   432
+random_sd     216   324   324   432   432
+TP: median |rel err| %
+loss_target     0.05     0.10     0.20     0.30     0.50
+method                                                  
+none         12294.7  13046.8  24700.2  29047.3  35757.1
+mean_global     24.2     19.5     45.0     78.8     88.7
+mean_local      18.4     21.9     46.8     81.8     97.9
+random_sd       19.6     17.8     55.8     69.1     93.2
+TP: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          216   324   324   432   432
+mean_global   216   324   324   432   432
+mean_local    216   324   324   432   432
+random_sd     216   324   324   432   432
+RMSSD: median |rel err| %
+loss_target    0.05    0.10    0.20    0.30    0.50
+method                                             
+none         1329.8  1997.8  2915.3  5255.6  7381.5
+mean_global     6.0     8.1    10.2    24.6    32.6
+mean_local      5.4     7.9    11.0    28.2    39.1
+random_sd       7.6     8.5    12.2    24.0    35.6
+RMSSD: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          216   324   324   432   432
+mean_global   216   324   324   432   432
+mean_local    216   324   324   432   432
+random_sd     216   324   324   432   432
+SDNN: median |rel err| %
+loss_target   0.05    0.10    0.20    0.30    0.50
+method                                            
+none         817.0  1156.0  1730.1  3028.6  4568.4
+mean_global    6.0     7.1    12.8    26.3    34.9
+mean_local     6.8     8.6    16.4    30.5    49.7
+random_sd      5.9     7.6    13.2    22.0    30.5
+SDNN: n
+loss_target  0.05  0.10  0.20  0.30  0.50
+method                                   
+none          216   324   324   432   432
+mean_global   216   324   324   432   432
+mean_local    216   324   324   432   432
+random_sd     216   324   324   432   432
+LF mean_global: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20    0.30    0.50
+block_s                                        
+2            87.9  156.5  669.2  1619.3  8955.0
+5            13.6   14.2   49.3   223.6   386.2
+10            NaN   22.3   27.4    47.9    68.7
+30            NaN    NaN    NaN    70.2    65.6
+LF mean_local: median |rel err| % by block_s
+loss_target  0.05   0.10    0.20    0.30     0.50
+block_s                                          
+2            47.8  147.7  1520.0  6561.2  35038.7
+5            13.0   13.0    47.5   392.7   1225.7
+10            NaN   23.7    24.4    49.4    121.6
+30            NaN    NaN     NaN    69.9     67.3
+LF random_sd: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20    0.30    0.50
+block_s                                        
+2            88.5  162.0  664.6  1498.8  4804.3
+5            13.9   18.0   50.2   242.1   438.3
+10            NaN   23.8   28.9    44.4    73.9
+30            NaN    NaN    NaN    53.3    55.7
+HF mean_global: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            66.4  108.7  278.2  578.2  1576.4
+5             9.2    8.3   18.1   27.3    51.8
+10            NaN   12.1   17.6   34.9    55.1
+30            NaN    NaN    NaN   77.4    81.4
+HF mean_local: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            38.9  101.4  476.2  975.8  5852.0
+5             9.2    9.5   16.1   35.0    90.4
+10            NaN   13.1   16.9   39.4    61.7
+30            NaN    NaN    NaN   77.9    82.2
+HF random_sd: median |rel err| % by block_s
+loss_target  0.05   0.10   0.20   0.30    0.50
+block_s                                       
+2            74.0  133.7  338.0  736.1  4025.8
+5             7.0    8.5   17.0   35.3    67.5
+10            NaN    9.1   11.7   26.7    47.8
+30            NaN    NaN    NaN   50.8    46.9
+thresholds by block (all/seg2) — first rate crossing 10%:
+  none:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.05  0.05   0.05
+10       0.10  0.10   0.10
+30       0.30  0.30   0.30
+  mean_global:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.20  0.05   0.05
+10       0.10  0.10   0.10
+30       0.30  0.30   0.30
+  mean_local:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.20  0.05   0.05
+10       0.10  0.10   0.10
+30       0.30  0.30   0.30
+  random_sd:
+metric     HF    LF  LF_HF
+block_s                   
+2        0.05  0.05   0.05
+5        0.20  0.05   0.05
+10       0.20  0.10   0.10
+30       0.30  0.30   0.30

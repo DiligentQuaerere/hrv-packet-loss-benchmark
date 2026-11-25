@@ -1,0 +1,74 @@
+Subject00_1: dur=182 s, 229 peaks, 6 offsets
+Subject01_1: dur=182 s, 269 peaks, 6 offsets
+Subject03_1: dur=182 s, 187 peaks, 6 offsets
+Subject04_1: dur=170 s, 224 peaks, 6 offsets
+Subject05_1: dur=182 s, 290 peaks, 6 offsets
+Subject06_1: dur=182 s, 221 peaks, 6 offsets
+Subject07_1: dur=182 s, 242 peaks, 6 offsets
+Subject08_1: dur=182 s, 225 peaks, 6 offsets
+Subject09_1: dur=182 s, 226 peaks, 6 offsets
+Subject10_1: dur=188 s, 180 peaks, 6 offsets
+Subject11_1: dur=182 s, 267 peaks, 6 offsets
+Subject12_1: dur=182 s, 211 peaks, 6 offsets
+Subject14_1: dur=182 s, 212 peaks, 6 offsets
+Subject15_1: dur=182 s, 213 peaks, 6 offsets
+Subject16_1: dur=182 s, 262 peaks, 6 offsets
+Subject17_1: dur=182 s, 248 peaks, 6 offsets
+Subject18_1: dur=182 s, 262 peaks, 6 offsets
+Subject19_1: dur=182 s, 208 peaks, 6 offsets
+Subject20_1: dur=182 s, 236 peaks, 6 offsets
+Subject21_1: dur=182 s, 220 peaks, 6 offsets
+Subject22_1: dur=182 s, 244 peaks, 6 offsets
+Subject23_1: dur=182 s, 274 peaks, 6 offsets
+Subject24_1: dur=182 s, 185 peaks, 6 offsets
+Subject25_1: dur=182 s, 257 peaks, 6 offsets
+Subject26_1: dur=182 s, 185 peaks, 6 offsets
+Subject27_1: dur=182 s, 170 peaks, 6 offsets
+Subject29_1: dur=182 s, 214 peaks, 6 offsets
+Subject30_1: dur=182 s, 242 peaks, 6 offsets
+Subject31_1: dur=80 s, 82 peaks, 6 offsets
+Subject32_1: dur=182 s, 243 peaks, 6 offsets
+Subject33_1: dur=182 s, 284 peaks, 6 offsets
+Subject34_1: dur=182 s, 223 peaks, 6 offsets
+Subject35_1: dur=182 s, 240 peaks, 6 offsets
+
+== window-only control: 62 s window vs the same record's full length ==
+(no packet loss, no interpolation -- window length/estimator alone)
+  LF     median|rel|   43.5%  IQR  20.9- 65.4%  |rel|>10%:  84.3%  n=198 (33 records)
+  HF     median|rel|   18.9%  IQR   9.9- 34.7%  |rel|>10%:  74.2%  n=198 (33 records)
+  LF_HF  median|rel|   41.1%  IQR  22.2- 62.1%  |rel|>10%:  86.9%  n=198 (33 records)
+  TP     median|rel|   23.9%  IQR  10.6- 40.2%  |rel|>10%:  77.3%  n=198 (33 records)
+  RMSSD  median|rel|    7.6%  IQR   3.4- 17.9%  |rel|>10%:  39.9%  n=198 (33 records)
+  SDNN   median|rel|   12.1%  IQR   6.9- 20.1%  |rel|>10%:  60.6%  n=198 (33 records)
+  LF within-record CV across 6 windows of 62 s: median 60.9% (IQR 51.2-84.3%, n=33 records)
+  skipped Subject02_1: QC-excluded in the v1 split
+  skipped Subject13_1: QC-excluded in the v1 split
+  skipped Subject28_1: QC-excluded in the v1 split
+
+== realised loss rate (integer-block quantisation) ==
+-- segment _1 --
+loss_target  0.05  0.10  0.20  0.30  0.50
+block_s                                  
+2             5.5   9.9  19.8  29.7  50.5
+5             5.5  11.0  19.3  30.2  49.5
+10            5.5  11.0  21.9  27.6  49.3
+30            NaN  16.5  17.1  33.1  49.1   [realised loss %, nominal 5/10/20/30/50]
+loss_target  0.05  0.10  0.20  0.30  0.50
+block_s                                  
+2            99.0  99.0  99.0  99.0  99.0
+5            99.0  99.0  99.0  99.0  99.0
+10           96.0  99.0  99.0  99.0  99.0
+30            NaN  96.0  99.0  99.0  99.0   [runs per cell; blank = infeasible, skipped]
+-- segment _2 --
+loss_target  0.05  0.10  0.20  0.30  0.50
+block_s                                  
+2             6.5   9.7  19.4  29.0  51.6
+5             8.1   8.1  16.1  32.3  48.4
+10            NaN  16.1  16.1  32.3  48.4
+30            NaN   NaN   NaN  48.4  48.4   [realised loss %, nominal 5/10/20/30/50]
+loss_target   0.05   0.10   0.20   0.30   0.50
+block_s                                       
+2            102.0  102.0  102.0  102.0  102.0
+5            102.0  102.0  102.0  102.0  102.0
+10             NaN  102.0  102.0  102.0  102.0
+30             NaN    NaN    NaN  102.0  102.0   [runs per cell; blank = infeasible, skipped]

@@ -1,0 +1,62 @@
+== excluded: matched cells = blocks [2, 5] s x all 5 rates ==
+   records: _1 = 33, _2 = 34; rows: 35640 / 36720
+  LF matched | median abs rel err % , segment _1:
+loss_target    0.05     0.10     0.20     0.30     0.50
+method                                                 
+mean_global    36.3    106.0    199.3    788.1   3086.5
+mean_local     51.5    176.1   1093.1   3828.4   9736.3
+none         6424.5  12343.7  19663.7  26263.3  27382.2
+random_sd      39.2    113.6    201.6    533.6   1306.2
+  LF matched | segment _2:
+loss_target     0.05     0.10     0.20     0.30     0.50
+method                                                  
+mean_global     32.6     30.3    233.7    604.6   1649.6
+mean_local      21.9     37.1    354.1   1997.3  17268.1
+none         26457.0  27000.1  58358.2  87700.5  96635.4
+random_sd       36.0     40.6    236.9    582.2   1383.1
+  HF matched | median abs rel err % , segment _1:
+loss_target    0.05    0.10    0.20    0.30     0.50
+method                                              
+mean_global    11.3    20.6    48.5   157.4    559.3
+mean_local     12.5    41.5   129.8   556.0   1489.8
+none         1701.5  3091.5  5213.0  8643.6  13746.1
+random_sd      11.9    27.1    94.2   380.1   2111.0
+  HF matched | segment _2:
+loss_target    0.05    0.10     0.20     0.30     0.50
+method                                                
+mean_global    16.7    21.2     38.5    103.6    485.9
+mean_local     13.4    18.2     45.2    381.1   2524.1
+none         4866.6  6233.1  12551.1  22887.8  37946.7
+random_sd      14.5    21.3     49.9    204.6   1002.4
+
+== all: matched cells = blocks [2, 5] s x all 5 rates ==
+   records: _1 = 36, _2 = 36; rows: 38880 / 38880
+  LF matched | median abs rel err % , segment _1:
+loss_target    0.05     0.10     0.20     0.30     0.50
+method                                                 
+mean_global    29.1     84.7    167.5    581.1   2522.1
+mean_local     43.6    157.4    871.9   3641.3   8610.5
+none         5533.0  10918.8  18247.2  22396.3  23541.3
+random_sd      30.7     93.2    144.9    412.7   1074.2
+  LF matched | segment _2:
+loss_target     0.05     0.10     0.20     0.30     0.50
+method                                                  
+mean_global     21.3     32.8    188.7    563.3   1439.2
+mean_local      20.8     35.5    299.2   1566.5  14477.4
+none         21074.5  24353.1  53837.4  81282.5  82285.5
+random_sd       24.4     40.6    210.2    531.0   1230.6
+  HF matched | median abs rel err % , segment _1:
+loss_target    0.05    0.10    0.20    0.30     0.50
+method                                              
+mean_global    11.6    21.9    47.3   121.8    408.3
+mean_local     12.7    36.8    94.8   458.8   1285.0
+none         1492.1  2356.2  4337.0  7024.6  11262.7
+random_sd      11.9    27.3    66.1   257.6   1672.0
+  HF matched | segment _2:
+loss_target    0.05    0.10     0.20     0.30     0.50
+method                                                
+mean_global    17.0    23.0     40.6     84.3    403.0
+mean_local     13.6    19.9     47.5    303.4   2075.7
+none         4285.2  5169.1  11164.0  20157.2  34406.0
+random_sd      15.2    23.3     59.9    147.6    650.5
+

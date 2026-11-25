@@ -1,0 +1,24 @@
+Fantasia local copy: \26-11-23\PNS_SNS\data\fantasia
+ANNOTATORS file content: 'corrected beat annotations from an automated detector'
+=> machine annotations with correction, NOT independent human expert labels.
+
+f1o01: missing .dat -- detector NOT run (no waveform in local copy)
+f1o02: missing .dat -- detector NOT run (no waveform in local copy)
+f1o03: missing .dat -- detector NOT run (no waveform in local copy)
+f1o04: missing .dat -- detector NOT run (no waveform in local copy)
+f1o05: missing .dat -- detector NOT run (no waveform in local copy)
+f1o06: missing .dat -- detector NOT run (no waveform in local copy)
+f1o07: missing .dat -- detector NOT run (no waveform in local copy)
+f1o08: missing .dat -- detector NOT run (no waveform in local copy)
+f1o09: missing .dat -- detector NOT run (no waveform in local copy)
+f1o10: missing .dat -- detector NOT run (no waveform in local copy)
+f1y01: missing .dat -- detector NOT run (no waveform in local copy)
+f1y02: missing .dat -- detector NOT run (no waveform in local copy)
+f1y03: missing .dat -- detector NOT run (no waveform in local copy)
+f1y04: missing .dat -- detector NOT run (no waveform in local copy)
+f1y05: missing .dat -- detector NOT run (no waveform in local copy)
+f1y06: missing .dat -- detector NOT run (no waveform in local copy)
+f1y07: missing .dat -- detector NOT run (no waveform in local copy)
+f1y08: missing .dat -- detector NOT run (no waveform in local copy)
+f1y09: missing .dat -- detector NOT run (no waveform in local copy)
+f1y10: missing .dat -- detector NOT run (no waveform in local copy)

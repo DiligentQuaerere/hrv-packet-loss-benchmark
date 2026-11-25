@@ -1,0 +1,100 @@
+wfdb version: 4.3.1
+records listed: 40
+f2o01 fs=  250    660 s | ref  763 det  761 | match  761 (0.9974) missed   2 extra   0 | HR ref 69.4 det 69.2
+f2o02 fs=  250    660 s | ref  616 det  614 | match  612 (0.9935) missed   4 extra   2 | HR ref 56.0 det 55.8
+f2o03 fs=  250    660 s | ref  647 det  646 | match  646 (0.9985) missed   1 extra   0 | HR ref 58.9 det 58.8
+f2o04 fs=  250    660 s | ref  658 det  658 | match  658 (1.0000) missed   0 extra   0 | HR ref 59.8 det 59.8
+f2o05 fs=  250    660 s | ref  848 det  362 | match  359 (0.4233) missed 489 extra   3 | HR ref 77.1 det 52.0
+f2o06 fs=  250    660 s | ref  515 det  515 | match  515 (1.0000) missed   0 extra   0 | HR ref 46.8 det 46.8
+f2o07 fs=  250    660 s | ref  553 det  553 | match  553 (1.0000) missed   0 extra   0 | HR ref 50.3 det 50.3
+f2o08 fs=  250    660 s | ref  706 det  698 | match  698 (0.9887) missed   8 extra   0 | HR ref 64.2 det 63.5
+f2o09 fs=  250    660 s | ref  608 det  599 | match  597 (0.9819) missed  11 extra   2 | HR ref 55.3 det 54.5
+f2o10 fs=  250    660 s | ref  898 det  898 | match  898 (1.0000) missed   0 extra   0 | HR ref 81.7 det 81.7
+f2y01 fs=  250    660 s | ref  760 det  760 | match  760 (1.0000) missed   0 extra   0 | HR ref 69.1 det 69.1
+f2y02 fs=  333    660 s | ref  609 det  609 | match  609 (1.0000) missed   0 extra   0 | HR ref 55.4 det 55.4
+f2y03 fs=  250    660 s | ref  642 det  642 | match  642 (1.0000) missed   0 extra   0 | HR ref 58.3 det 58.3
+f2y04 fs=  250    660 s | ref  840 det  840 | match  840 (1.0000) missed   0 extra   0 | HR ref 76.4 det 76.4
+f2y05 fs=  250    660 s | ref  866 det  146 | match  145 (0.1674) missed 721 extra   1 | HR ref 78.7 det 75.4
+f2y06 fs=  250    660 s | ref  669 det  669 | match  669 (1.0000) missed   0 extra   0 | HR ref 60.8 det 60.8
+f2y07 fs=  250    660 s | ref  636 det  636 | match  636 (1.0000) missed   0 extra   0 | HR ref 57.8 det 57.8
+f2y08 fs=  250    660 s | ref  691 det  691 | match  687 (0.9942) missed   4 extra   4 | HR ref 62.8 det 62.7
+f2y09 fs=  250    660 s | ref  866 det  848 | match  836 (0.9654) missed  30 extra  12 | HR ref 78.7 det 77.1
+f2y10 fs=  250    660 s | ref  676 det  621 | match  608 (0.8994) missed  68 extra  13 | HR ref 61.5 det 60.1
+
+== pooled over validated records ==
+  n_records_validated                20
+  n_records_no_waveform              20
+  total_ref_beats                    14067
+  total_det_beats                    12766
+  total_matched                      12729
+  pooled_match_rate                  0.904884
+  pooled_precision                   0.997102
+  pooled_f1                          0.948757
+  total_missed                       1338
+  total_extra                        37
+  per_record_match_rate_median       0.999227
+  per_record_match_rate_q25          0.986978
+  per_record_match_rate_q75          1.000000
+  per_record_match_rate_min          0.167436
+  per_record_match_rate_max          1.000000
+  per_record_precision_median        1.000000
+  per_record_precision_min           0.979066
+  median_abs_offset_ms_median        8.000000
+  p95_abs_offset_ms_median           12.006006
+  tolerance_ms                       50.000000
+  covered_duration_s_total           13200.000000
+
+== agreement distribution across records (match rate) ==
+  p0   0.1674
+  p10  0.8518
+  p25  0.9870
+  p50  0.9992
+  p75  1.0000
+  p90  1.0000
+  p100 1.0000
+
+wrote fig_fantasia_validation.png
+
+== records where the detector could not be run ==
+  f1o01
+  f1o02
+  f1o03
+  f1o04
+  f1o05
+  f1o06
+  f1o07
+  f1o08
+  f1o09
+  f1o10
+  f1y01
+  f1y02
+  f1y03
+  f1y04
+  f1y05
+  f1y06
+  f1y07
+  f1y08
+  f1y09
+  f1y10
+
+== notes ==
+  f1o01: missing .dat -- detector NOT run (no waveform in local copy)
+  f1o02: missing .dat -- detector NOT run (no waveform in local copy)
+  f1o03: missing .dat -- detector NOT run (no waveform in local copy)
+  f1o04: missing .dat -- detector NOT run (no waveform in local copy)
+  f1o05: missing .dat -- detector NOT run (no waveform in local copy)
+  f1o06: missing .dat -- detector NOT run (no waveform in local copy)
+  f1o07: missing .dat -- detector NOT run (no waveform in local copy)
+  f1o08: missing .dat -- detector NOT run (no waveform in local copy)
+  f1o09: missing .dat -- detector NOT run (no waveform in local copy)
+  f1o10: missing .dat -- detector NOT run (no waveform in local copy)
+  f1y01: missing .dat -- detector NOT run (no waveform in local copy)
+  f1y02: missing .dat -- detector NOT run (no waveform in local copy)
+  f1y03: missing .dat -- detector NOT run (no waveform in local copy)
+  f1y04: missing .dat -- detector NOT run (no waveform in local copy)
+  f1y05: missing .dat -- detector NOT run (no waveform in local copy)
+  f1y06: missing .dat -- detector NOT run (no waveform in local copy)
+  f1y07: missing .dat -- detector NOT run (no waveform in local copy)
+  f1y08: missing .dat -- detector NOT run (no waveform in local copy)
+  f1y09: missing .dat -- detector NOT run (no waveform in local copy)
+  f1y10: missing .dat -- detector NOT run (no waveform in local copy)

@@ -2,7 +2,7 @@
 
 **HRV under packet loss — an RR-interpolation benchmark on public ECG segments**
 
-> 一句话：把干净的 ECG 成块删掉，再用几种做法把缺掉的 R 峰间期补回来，看 HRV 指标误差有多大、从哪个丢包率开始不能用。
+> 该目录代码逻辑：把干净的 ECG 成块删掉，再用几种做法把缺掉的 R 峰间期补回来，看 HRV 指标误差有多大、从哪个丢包率开始不能用。
 
 数据全部来自**公开数据集**（PhysioNet EEGMAT v1.0.0 / Fantasia v1.0.0，ODC-By 1.0）。本仓库**不包含任何原始生理信号**，只放代码与汇总结果。
 
